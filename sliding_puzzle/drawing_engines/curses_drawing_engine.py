@@ -72,3 +72,6 @@ class CursesDrawingEngine(DrawingEngine):
             self._callbacks[key_mapping[key]]()
         except KeyError:
             pass
+
+    def __del__(self):
+        curses.reset_shell_mode()
