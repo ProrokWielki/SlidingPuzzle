@@ -81,8 +81,8 @@ class CursesGameDataBuilder:
         Returns:
             GameData: GameData object suitable for CursesDrawingEngine.
         """
-        block_width = int(100 / num_of_blocks_in_line)
-        block_height = int(70 / num_of_blocks_in_line)
+        block_width = int(50 / num_of_blocks_in_line)
+        block_height = int(40 / num_of_blocks_in_line)
 
         game_data = GameData()
         game_data.blocks = []
