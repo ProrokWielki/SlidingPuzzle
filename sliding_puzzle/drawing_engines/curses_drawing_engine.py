@@ -12,18 +12,18 @@ from sliding_puzzle.drawables.abstract_drawables import Drawable
 class CursesDrawingEngine(DrawingEngine):
     """DrawingEngine implementation which uses curses as a drawing framework"""
 
-    stdscr = curses.initscr()
-
     def __init__(self) -> None:
         """Initializes CursesDrawingEngine
 
         Initializes CursesDrawingEngine object and sets all the needed options of the curses framework.
         """
         super().__init__()
+        self.stdscr = curses.initscr()
 
         curses.noecho()
         curses.curs_set(False)
         curses.cbreak()
+
         self.stdscr.keypad(True)
         self.stdscr.clear()
         self.stdscr.refresh()
@@ -75,3 +75,4 @@ class CursesDrawingEngine(DrawingEngine):
 
     def __del__(self):
         curses.reset_shell_mode()
+        curses.endwin()
